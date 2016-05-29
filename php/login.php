@@ -7,8 +7,6 @@ if($_POST['usuario'] and $_POST['password'] )
 	$q = mysqli_query($conexion,$sql);
 	$registro=mysqli_fetch_array($q);
 	$filas = mysqli_num_rows($q);
-    
-    
 	if($filas>=1 && $resgistro['id_tipo_usuario']==2){
 		echo '<SCRIPT language="JavaScript">
         window.location="../panel_administrador.php";
