@@ -5,7 +5,6 @@ $consulta = "INSERT INTO articulo VALUES (NULL,'".$_POST['descripcion']."','".$_
 $resultado = mysqli_query($conexion,$consulta);
 
 $consulta2="SELECT * FROM articulo ORDER BY id DESC LIMIT 1";
-
 $resultado2= mysqli_query($conexion,$consulta2);
 
 $fila = mysqli_fetch_array($resultado2);
