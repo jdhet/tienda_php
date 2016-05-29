@@ -43,7 +43,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Catalogo</a></li>
                 <li><a href="alta_cliente.php">Registrar</a></li>
-                <li><a href="login.html">Iniciar Sesion</a></li>
+                <li><a href="login.php">Iniciar Sesion</a></li>
             </ul>
         </div>
     </div>

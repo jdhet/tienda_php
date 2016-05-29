@@ -35,7 +35,7 @@ session_start();
 
                 <li><a href="index.php">Catalogo</a></li>
                 <li><a href="alta_cliente.php">Registrar</a></li>
-                <li><a href="login.html">Iniciar Sesion</a></li>
+                <li><a href="login.php">Iniciar Sesion</a></li>
 
             </ul>
         </div>

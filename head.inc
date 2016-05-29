@@ -32,7 +32,9 @@
             <li>
                 <a href="">CLIENTES</a>
             </li>
-
+            <li>
+                <a href="php/cerrar_sesion.php">CERRAR SESION</a>
+            </li>
         </ul>
     </div>
     <div id="page-content-wrapper">
