@@ -25,7 +25,7 @@ if ($numero_filas > 0) {
         if ($resultado == true) {
             echo '<SCRIPT language="JavaScript">
     alert("CLIENTE GUARDADO CORRECTAMENTE");
-    window.location="../../alta.php";
+    window.location="../../alta_cliente.php";
     </script>';
         } else {
             echo "no se guardo el cliente";
