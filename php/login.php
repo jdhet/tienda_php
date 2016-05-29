@@ -9,11 +9,13 @@ if ($_POST['usuario'] and $_POST['password']) {
     $filas = mysqli_num_rows($q);
     if ($filas >= 1 && $registro['id_tipo_usuario'] == 1) {
         $_SESSION['usuario'] = $_POST['usuario'];
+        $_SESSION['contador'] = 0;
         echo '<SCRIPT language="JavaScript">
         window.location="../panel_administrador.php";
         </script>';
     } elseif ($filas >= 1 && $registro['id_tipo_usuario'] == 2) {
         $_SESSION['usuario'] = $_POST['usuario'];
+        $_SESSION['contador'] = 0;
         echo '<SCRIPT language="JavaScript">
         window.location="../pago.php";
         </script>';

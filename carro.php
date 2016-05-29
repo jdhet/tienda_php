@@ -1,28 +1,5 @@
 <?php
-//sino existe la variable se session tomamos lo que ya tenemos para anexar sobre eso
-if(isset($_SESSION['carro']))
-	$carro=$_SESSION['carro'];
-	//anexamos la informacion al carrito
-	if(isset($_GET['art']))
-	{
-		$carro[$_GET['art']]=array("id"=>$_GET['art'],"cta"=>1);
-		$_SESSION['carro']=$carro;
-	}
-	//actualizamos el carro
-	if($_POST['btnact'])
-	{
-		$n = count($_POST);
-		$tag = array_keys($_POST); // obtiene los nombres de las varibles
-		$valor = array_values($_POST);// obtiene los valores de las varibles
-		for($x=0; $x<$n-1; $x++)
-		{
-			$cta=$valor[$x];
-			if($cta<=0)$cta=1;
-			$carro[$tag[$x]]=array("id"=>$tag[$x],"cta"=>$cta);
-		}
-		$_SESSION['carro']=$carro;
-	}
-if(count($carro)>0)
+if($_SESSION['contador']>0)
 {
 	echo"<div class='col-md-12'>";
 	echo "<form name='frm' action='index.php?secc=add' method='post' class='form-inline'>";
