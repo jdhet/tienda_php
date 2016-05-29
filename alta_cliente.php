@@ -1,4 +1,8 @@
-<?php //include "head.inc" ?>
+<?php
+include "php/session.php";
+session_start();
+existeSesion();
+?>
     <!DOCTYPE html>
     <html>
     <head>

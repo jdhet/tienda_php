@@ -1,4 +1,10 @@
-<?php include "head.inc" ?>
+<?php
+include "head.inc";
+include "php/session.php";
+session_start();
+existeSesion();
+?>
+
     <h3>Alta Producto</h3>
 
         <form action="php/productos/alta.php" method="post">

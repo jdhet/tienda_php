@@ -1,4 +1,7 @@
 <?php
+include "../session.php";
+session_start();
+existeSesion();
 include "../conexion.php";
 include "../bitacora.php";
 $consulta = "select * from usuario where usuario='" . $_POST['usuario'] . "'";

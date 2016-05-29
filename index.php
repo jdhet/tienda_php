@@ -135,8 +135,8 @@ session_start();
 								<h4><?php echo $fila['marca']."-".$fila['modelo']?></h4>
 								<p><?php echo $fila['descripcion']?> </p>
 								<!--<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Comprar</button>-->
-								<a href="index.php?secc=add&art=<?php echo $fila['id'];?>" class="btn btn-primary btn-xs">Comprar</a>
-								<a href="index.php?secc=view&art=<?php echo $fila['id'];?>" class="btn btn-default btn-xs">MAS INF</a>
+<!--								<a href="index.php?secc=add&art=--><?php //echo $fila['id'];?><!--" class="btn btn-primary btn-xs">AGREGAR AL CARRITO</a>-->
+								<a href="index.php?secc=view&art=<?php echo $fila['id'];?>" class="btn btn-default btn-xs">MAS INFORMACION</a>
 							</div>
 						</div>
 					</div>
@@ -163,7 +163,7 @@ session_start();
     <footer>
 		<div class="row">
 			<div class="col-lg-12">
-				<p>Copyright &copy; Your Website 2014</p>
+				<p>Copyright &copy; Juan Diego Herrera Trinidad 2016</p>
             </div>
 		</div>
 	</footer>
