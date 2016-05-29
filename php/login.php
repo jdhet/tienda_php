@@ -3,18 +3,24 @@ include "conexion.php";
 if($_POST['usuario'] and $_POST['password'] )
 {
 	$clave=md5($_POST['password']);
-	///echo $clave;
 	$sql = "SELECT * FROM usuario  WHERE usuario='{$_POST['usuario']}' AND contrasena = '{$clave}'";
-	//echo $sql;
 	$q = mysqli_query($conexion,$sql);
-	//print_r($q);
+	$registro=mysqli_fetch_array($q);
 	$filas = mysqli_num_rows($q);
-	if($filas>=1){
+    
+    
+	if($filas>=1 && $resgistro['id_tipo_usuario']==2){
 		echo '<SCRIPT language="JavaScript">
-    window.location="../panel.php";
-    </script>';
-	}else{
-		echo "no se encontro registro";
+        window.location="../panel_administrador.php";
+        </script>';
 	}
+    elseif ($fila>=1 && $registro['id_tipo_usuario']==1){
+        echo '<SCRIPT language="JavaScript">
+        window.location="../pago.php";
+        </script>';
+    }
+    else{
+		echo "no se encontro registro";
+        	}
 }
 ?>

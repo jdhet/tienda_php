@@ -10,7 +10,7 @@ if ($numero_filas > 0) {
     </script>';
 
 } else {
-    $contrasena = md5($contrasena);
+    $contrasena = md5($_POST['contrasena']);
     $consulta = "INSERT INTO usuario VALUES (NULL ,'" . $_POST['usuario'] . "','" . $contrasena . "',2)";
     $resultado = mysqli_query($conexion, $consulta);
     if ($resultado) {
