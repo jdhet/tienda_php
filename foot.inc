@@ -20,7 +20,7 @@
         alert('Query Variable ' + variable + ' not found');
     }
     $(document).ready(function () {
-      
+
         $('#example').dataTable({
             "order": [[3, "desc"]]
         });
