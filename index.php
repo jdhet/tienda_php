@@ -136,7 +136,7 @@ session_start();
 								<p><?php echo $fila['descripcion']?> </p>
 								<!--<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">Comprar</button>-->
 <!--								<a href="index.php?secc=add&art=--><?php //echo $fila['id'];?><!--" class="btn btn-primary btn-xs">AGREGAR AL CARRITO</a>-->
-								<a href="index.php?secc=view&art=<?php echo $fila['id'];?>" class="btn btn-default btn-xs">MAS INFORMACION</a>
+								<a href="detalle.php?secc=view&art=<?php echo $fila['id'];?>" class="btn btn-default btn-xs">MAS INFORMACION</a>
 							</div>
 						</div>
 					</div>

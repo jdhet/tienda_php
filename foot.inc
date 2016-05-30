@@ -20,22 +20,7 @@
         alert('Query Variable ' + variable + ' not found');
     }
     $(document).ready(function () {
-        $('.btn_agregar').on(function () {
-            console.log($('#cantidad').val());
-            console.log(getQueryVariable("art"));
-            $.ajax({
-                data: {
-                    "cantidad": $('#cantidad').val(),
-                    "id_producto": getQueryVariable("art")
-                },
-                url: 'php/carro.php',
-                type: 'post',
-                success: function (response) {
-                    console.log(response);
-
-                }
-            });
-        })
+      
         $('#example').dataTable({
             "order": [[3, "desc"]]
         });

@@ -1,28 +1,70 @@
 <?php
-$id=$_GET['art'];
-//buscamos el producto por su codigo
-$s = "SELECT articulo.*, marca.descripcion AS marca FROM articulo  INNER JOIN marca on articulo.id_marca=marca.id  where articulo.id='{$id}'";
-$rs= mysqli_fetch_array(mysqli_query($conexion, $s));
-echo "<div class='col-md-4'>";
-	echo "<img src='img/{$rs['imagen']}' class='img-responsive img-thumbnail'>";
-echo "</div>";
-echo "<div class='col-md-8 text-left'>";
-	echo "<h3>Marca: {$rs['marca']}<br>
-		Producto: {$rs['descripcion']}<br>
-		Modelo: {$rs['modelo']}<br>
-		Precio: $ {$rs['precio']}<br>
-		Disponible:{$rs['cantidad']}<br></h3>";
-	?>
+$id_articulo = $_GET['art'];
 
+?>
+<html>
+<head>
+    <title></title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" media="screen" href="css/bootstrap-admin-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-<label for="">CANTIDAD</label>
-<input type="text" name="cantidad" value="1" class="form-group"><br>
-	<?php
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img class="logo_index" src="img/logos/logo_index.jpg" alt="">
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <h3>Tiendita.com</h3>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.php">Catalogo</a></li>
+                <li><a href="alta_cliente.php">Registrar</a></li>
+                <li><a href="login.php">Iniciar Sesion</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-	echo "<button class='btn btn-primary btn_agregar'>Agregar a carrito</button>";
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque commodi cum, dignissimos dolor enim illo
+    nostrum qui sapiente tempora? Ab aperiam blanditiis eos exercitationem facere, maxime molestias perferendis
+    saepe.</p>
 
-
-echo "</div>";
+<?php
+    echo $id_articulo;
 ?>
 
+<script>
+    $('.btn_agregar').on('click', function () {
+        console.log($('#cantidad').val());
+        console.log(getQueryVariable("art"));
+        $.ajax({
+            data: {
+                "cantidad": $('#cantidad').val(),
+                "id_producto": getQueryVariable("art")
+            },
+            url: 'php/carro.php',
+            type: 'post',
+            success: function (response) {
+                console.log(response);
+            }
+        });
+    });
+</script>
+</body>
+</html>
 
