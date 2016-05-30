@@ -18,7 +18,9 @@ echo "<div class='col-md-8 text-left'>";
 <label for="">CANTIDAD</label>
 <input type="text" name="cantidad" value="1" class="form-group"><br>
 	<?php
-	echo "<a href='index.php?secc=add&art={$rs['id']}' class='btn btn-primary' class='btn_agregar' id='cantidad'>Agregar a carrito</a>";
+
+	echo "<button class='btn btn-primary'>Agregar a carrito</button>";
+
 
 echo "</div>";
 ?>
