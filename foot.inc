@@ -21,6 +21,8 @@
     }
     $(document).ready(function () {
         $('.btn_agregar').on(function () {
+            console.log($('#cantidad').val());
+            console.log(getQueryVariable("art"));
             $.ajax({
                 data: {
                     "cantidad": $('#cantidad').val(),

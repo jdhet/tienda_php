@@ -19,7 +19,7 @@ echo "<div class='col-md-8 text-left'>";
 <input type="text" name="cantidad" value="1" class="form-group"><br>
 	<?php
 
-	echo "<button class='btn btn-primary'>Agregar a carrito</button>";
+	echo "<button class='btn btn-primary btn_agregar'>Agregar a carrito</button>";
 
 
 echo "</div>";

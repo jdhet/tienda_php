@@ -17,7 +17,7 @@ if ($_POST['usuario'] and $_POST['password']) {
         $_SESSION['usuario'] = $_POST['usuario'];
         $_SESSION['contador'] = 0;
         echo '<SCRIPT language="JavaScript">
-        window.location="../pago.php";
+        window.location="../index.php";
         </script>';
     } else {
         echo "no se encontro registro";
