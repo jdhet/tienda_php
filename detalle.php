@@ -35,6 +35,7 @@ $fila= mysqli_fetch_array(mysqli_query($conexion, $s));
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="carro.php">Carrito</a></li>
                 <li><a href="index.php">Catalogo</a></li>
                 <li><a href="alta_cliente.php">Registrar</a></li>
                 <li><a href="login.php">Iniciar Sesion</a></li>
@@ -56,7 +57,7 @@ $fila= mysqli_fetch_array(mysqli_query($conexion, $s));
     </h3>
     <button type="button" class="btn btn_primary btn_agregar">Agregar a carrito</button>
     <script src="js/jquery.min.js"></script>
-
+    
 <script>
 
     function getQueryVariable(variable) {

@@ -33,6 +33,7 @@ session_start();
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
+                <li><a href="carro.php">Carrito</a></li>
                 <li><a href="index.php">Catalogo</a></li>
                 <li><a href="alta_cliente.php">Registrar</a></li>
                 <li><a href="login.php">Iniciar Sesion</a></li>
