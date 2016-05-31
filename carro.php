@@ -1,36 +1,30 @@
 <?php
 session_start();
+include "php/conexion.php";
 if ($_SESSION['contador'] > 0) {
     ?>
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-        </tr>
-        <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-        </tr>
-        <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-        </tr>
-        </tbody>
-    </table>
     <?php
     for ($c = 0; $c < $_SESSION['contador']; $c++) {
-        echo "id_producto: " . $_SESSION['id'][$c] . " cantidad" . $_SESSION['cantidad'] . "<br>";
+        $consulta = "SELECT * FROM articulo WHERE id=".$_SESSION['id'][$c].";";
+        $fila = mysqli_fetch_array(mysqli_query($conexion,$consulta));
+        ?>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Descripcion</th>
+                    <th>Cantidad a pedir</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Doe</td>
+                    <td><?php echo $fila['descripcion']; ?></td>
+                    <td><?php echo $_SESSION['cantidad'][$c]; ?></td>
+                </tr>
+                </tbody>
+            </table>
+        <?php
     }
 } else {
     ?>
