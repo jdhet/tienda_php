@@ -7,4 +7,10 @@ function agregarCarro($id_producto,$cantidad) {
     echo "Exito";
 }
 agregarCarro($_POST['id_producto'],$_POST['cantidad']);
+
+function limpiarCarro() {
+    for ($c=0;$c<$_SESSION['contador'];$c++) {
+        
+    }
+}
 ?>

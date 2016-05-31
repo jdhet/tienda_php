@@ -51,7 +51,7 @@ $fila= mysqli_fetch_array(mysqli_query($conexion, $s));
 <div class='col-md-8 text-left'>
 	<h3>Producto: <?php echo $fila['descripcion']?><br>
 		Modelo: <?php echo $fila['modelo']?><br>
-		Precio: <?php echo $fila['precio']?><br>
+		Precio: <?php echo "$".$fila['precio'].".00" ?><br>
 		Disponible:<?php echo $fila['cantidad']?><br>
         Cantidad:<input type="text" id="cantidad" value="1"><br>
     </h3>
@@ -81,7 +81,7 @@ $fila= mysqli_fetch_array(mysqli_query($conexion, $s));
             url: 'php/carrito.php',
             type: 'post',
             success: function (response) {
-                console.log(response);
+                alert("Se ha agregado el producto correctamente");
             },
             error: function (response) {
                 console.log(response);
