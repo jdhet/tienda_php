@@ -9,8 +9,9 @@ function agregarCarro($id_producto,$cantidad) {
 agregarCarro($_POST['id_producto'],$_POST['cantidad']);
 
 function limpiarCarro() {
-    for ($c=0;$c<$_SESSION['contador'];$c++) {
-        
+    for ($c=0;$c<=$_SESSION['contador'];$c++) {
+        $_SESSION['id'][$c] = '';
+        $_SESSION['cantidad'][$c] = '';
     }
 }
 ?>
