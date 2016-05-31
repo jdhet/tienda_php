@@ -1,5 +1,8 @@
 <?php
+include "php/conexion.php";
 $id_articulo = $_GET['art'];
+$s = "SELECT articulo.*, marca.descripcion AS marca FROM articulo  INNER JOIN marca on articulo.id_marca=marca.id  where articulo.id='{$id_articulo}'";
+$fila= mysqli_fetch_array(mysqli_query($conexion, $s));
 
 ?>
 <html>
@@ -40,15 +43,34 @@ $id_articulo = $_GET['art'];
     </div>
 </nav>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur atque commodi cum, dignissimos dolor enim illo
-    nostrum qui sapiente tempora? Ab aperiam blanditiis eos exercitationem facere, maxime molestias perferendis
-    saepe.</p>
 
-<?php
-    echo $id_articulo;
-?>
+<div class='col-md-4'>
+	<img src='img/<?php echo $fila['imagen']?>' class='img-responsive img-thumbnail'>
+	</div>
+<div class='col-md-8 text-left'>
+	<h3>Producto: <?php echo $fila['descripcion']?><br>
+		Modelo: <?php echo $fila['modelo']?><br>
+		Precio: <?php echo $fila['precio']?><br>
+		Disponible:<?php echo $fila['cantidad']?><br>
+        Cantidad:<input type="text" id="cantidad" values="1"><br>
+    </h3>
+    <button type="button" class="btn btn_primary btn_agregar">Agregar a carrito</button>
+    <script src="js/jquery.min.js"></script>
 
 <script>
+
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        alert('Query Variable ' + variable + ' not found');
+    }
+
     $('.btn_agregar').on('click', function () {
         console.log($('#cantidad').val());
         console.log(getQueryVariable("art"));
@@ -57,14 +79,18 @@ $id_articulo = $_GET['art'];
                 "cantidad": $('#cantidad').val(),
                 "id_producto": getQueryVariable("art")
             },
-            url: 'php/carro.php',
+            url: 'carro.php',
             type: 'post',
             success: function (response) {
                 console.log(response);
             }
         });
     });
+
+
 </script>
+
+
 </body>
 </html>
 

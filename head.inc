@@ -27,10 +27,10 @@
                 <a href="alta_producto.php">PRODUCTOS</a>
             </li>
             <li>
-                <a href="">PROVEEDORES</a>
+                <a href=""></a>
             </li>
             <li>
-                <a href="">CLIENTES</a>
+                <a href=""></a>
             </li>
             <li>
                 <a href="php/cerrar_sesion.php">CERRAR SESION</a>
