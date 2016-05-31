@@ -53,28 +53,39 @@ if ($_SESSION['contador'] > 0) {
     <table class="table table-hover">
     <thead>
     <tr>
-        <th>#</th>
         <th>Descripcion</th>
+        <th>Modelo</th>
         <th>Cantidad a pedir</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Sutotal</th>
     </tr>
     </thead>
     <tbody>
 
     <?php
+    $suma =0;
     for ($c = 0; $c < $_SESSION['contador']; $c++) {
         $consulta = "SELECT * FROM articulo WHERE id=" . $_SESSION['id'][$c] . ";";
         $fila = mysqli_fetch_array(mysqli_query($conexion, $consulta));
+        $suma+=$_SESSION['cantidad'][$c]*$fila['precio'];
         ?>
-
-                <tr>
-                    <td>Doe</td>
-                    <td><?php echo $fila['descripcion']; ?></td>
-                    <td><?php echo $_SESSION['cantidad'][$c]; ?></td>
-                </tr>
-
+            <tr>
+                <td><?php echo $fila['descripcion']; ?></td>
+                <td><?php echo $fila['modelo']; ?></td>
+                <td><?php echo $_SESSION['cantidad'][$c]; ?></td>
+                <td><img style="border-radius: 5px; border: solid 1px #000" src="img/<?php echo $fila['imagen']; ?>" alt="" width="100px" height="100px"></td>
+                <td><?php echo "$".$fila['precio'].".00"; ?></td>
+                <td><?php echo "$".$_SESSION['cantidad'][$c]*$fila['precio'].".00"; ?></td>
+            </tr>
         <?php
     }
     ?>
+    <tr>
+        <td colspan="4"></td>
+        <td><b>Total: </b></td>
+        <td><b style="color: #00ca6d"><?php echo "$".$suma.".00"; ?></b></td>
+    </tr>
     </tbody>
     </table>
 
