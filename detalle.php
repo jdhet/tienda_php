@@ -53,7 +53,7 @@ $fila= mysqli_fetch_array(mysqli_query($conexion, $s));
 		Modelo: <?php echo $fila['modelo']?><br>
 		Precio: <?php echo $fila['precio']?><br>
 		Disponible:<?php echo $fila['cantidad']?><br>
-        Cantidad:<input type="text" id="cantidad" values="1"><br>
+        Cantidad:<input type="text" id="cantidad" value="1"><br>
     </h3>
     <button type="button" class="btn btn_primary btn_agregar">Agregar a carrito</button>
     <script src="js/jquery.min.js"></script>
@@ -73,25 +73,22 @@ $fila= mysqli_fetch_array(mysqli_query($conexion, $s));
     }
 
     $('.btn_agregar').on('click', function () {
-        console.log($('#cantidad').val());
-        console.log(getQueryVariable("art"));
         $.ajax({
             data: {
                 "cantidad": $('#cantidad').val(),
                 "id_producto": getQueryVariable("art")
             },
-            url: 'carro.php',
+            url: 'php/carrito.php',
             type: 'post',
             success: function (response) {
+                console.log(response);
+            },
+            error: function (response) {
                 console.log(response);
             }
         });
     });
-
-
 </script>
-
-
 </body>
 </html>
 
